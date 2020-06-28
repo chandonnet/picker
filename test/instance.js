@@ -97,7 +97,7 @@ Tinytest.add('middlewares - with filtered routes', function(test) {
   test.equal(res.content, "ok");
 });
 
-/*
+
 Tinytest.add('middlewares - with several filtered routes', function(test) {
   const path1 = `${Random.id()}/coola`;
   const path2 = `${Random.id()}/coola`;
@@ -130,4 +130,4 @@ Tinytest.add('middlewares - with several filtered routes', function(test) {
 
   const res2 = HTTP.get(getPath(path2));
   test.equal(res2.content, "12");
-});*/
+});
