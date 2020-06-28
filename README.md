@@ -15,7 +15,7 @@ meteor add meteorhacks:picker
 ~~~js
 
 Picker.route('/post/:_id', function(params, req, res, next) {
-  var post = Posts.findOne(params._id);
+  const post = Posts.findOne(params._id);
   res.end(post.content);
 });
 
@@ -34,11 +34,11 @@ This is a unique functionality of this router. See following example:
 Let's say we need to handle only `POST` requests. This is how you can do it with `Picker`.
 
 ~~~js
-var postRoutes = Picker.filter(function(req, res) {
+const postRoutes = Picker.filter(function(req, res) {
   // you can write any logic you want.
   // but this callback does not run inside a fiber
   // at the end, you must return either true or false
-  return req.method == "POST";
+  return req.method === "POST";
 });
 
 postRoutes.route('/post/:id', function(params, req, res, next) {
