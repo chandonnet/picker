@@ -29,7 +29,7 @@ Picker.route('/post/:_id', function(params, req, res, next) {
 
 ## Filtering and Sub Routes
 
-This is an unique functionality of this router. See following example:
+This is a unique functionality of this router. See following example:
 
 Let's say we need to handle only `POST` requests. This is how you can do it with `Picker`.
 
@@ -53,9 +53,7 @@ You can create any amount of sub routes with this `filter` API. Same time, you c
 You can use existing `connect` and `express` middlewares without any issues.
 
 ~~~js
-// You can use the meteorhacks:npm package to load in the body-parser package
-// via NPM.
-var bodyParser = Meteor.npmRequire( 'body-parser');
+import bodyParser from 'body-parser';
 
 // Add two middleware calls. The first attempting to parse the request body as
 // JSON data and the second as URL encoded data.
