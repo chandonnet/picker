@@ -1,14 +1,19 @@
 Package.describe({
-  name: 'storyteller:picker',
+  name: 'communitypackages:picker',
   summary: 'Server Side Router for Meteor',
   version: '1.1.0',
-  git: 'https://github.com/storytellercz/picker.git',
+  git: 'https://github.com/Meteor-Community-Packages/picker.git',
   documentation: 'README.md'
 });
 
 Npm.depends({
   'path-to-regexp': '6.1.0'
 });
+
+function configurePackage(api) {
+  api.versionsFrom('1.9');
+  api.use(['webapp', 'ecmascript', 'url'], 'server');
+}
 
 Package.onUse(function(api) {
   configurePackage(api);
@@ -17,12 +22,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   configurePackage(api);
-  api.use('storyteller:picker', 'server');
+  api.use('communitypackages:picker', 'server');
   api.use(['tinytest', 'http', 'random'], 'server');
   api.mainModule('test/instance.js', 'server');
 });
-
-function configurePackage(api) {
-  api.versionsFrom('1.3');
-  api.use(['webapp', 'ecmascript', 'url'], 'server');
-}

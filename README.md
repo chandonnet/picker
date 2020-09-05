@@ -1,4 +1,4 @@
-[![](https://api.travis-ci.org/meteorhacks/picker.svg)](https://travis-ci.org/meteorhacks/picker)
+[![](https://api.travis-ci.org/communitypackages/picker.svg)](https://travis-ci.org/communitypackages/picker)
 
 # Picker - Server Side Router for Meteor
 
@@ -7,7 +7,7 @@ Picker is an easy to use server side router for Meteor. This router respect othe
 ## Install
 
 ~~~
-meteor add meteorhacks:picker
+meteor add communitypackages:picker
 ~~~
 
 ## Getting Started
