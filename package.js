@@ -1,7 +1,7 @@
 Package.describe({
   name: 'fchandonnet:picker',
   summary: 'Server Side Router for Meteor',
-  version: '1.1.3',
+  version: '1.1.5',
   git: 'https://github.com/chandonnet/picker',
   documentation: 'README.md'
 });
@@ -11,9 +11,24 @@ Npm.depends({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('2.3');
-  api.use(['webapp@1.10.1', 'ecmascript', 'url'], 'server');
-  api.addFiles('lib/implementation.js', 'server');
-  api.export('Picker', 'server');
-  api.addFiles('lib/instance.js', 'server');
+  configurePackage(api);
+  api.export(['Picker']);
 });
+
+Package.onTest(function(api) {
+  configurePackage(api);
+  api.use(['tinytest', 'http', 'random'], ['server']);
+  api.addFiles([
+    'test/instance.js'
+  ], ['server']);
+});
+
+function configurePackage(api) {
+  api.versionsFrom('2.3');
+
+  api.use(['webapp', 'ecmascript', 'url'], ['server']);
+  api.addFiles([
+    'lib/implementation.js',
+    'lib/instance.js',
+  ], ['server']);
+}
