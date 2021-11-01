@@ -14,5 +14,6 @@ Package.onUse(function(api) {
   api.versionsFrom('2.3');
   api.use(['webapp@1.10.1', 'ecmascript', 'url'], 'server');
   api.addFiles('lib/implementation.js', 'server');
-  api.mainModule('lib/instance.js', 'server');
+  api.export('Picker', 'server');
+  api.addFiles('lib/instance.js', 'server');
 });
