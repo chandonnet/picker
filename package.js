@@ -13,16 +13,16 @@ Npm.depends({
 function configurePackage(api) {
   api.versionsFrom('2.3');
   api.use(['webapp', 'ecmascript', 'url'], 'server');
+  api.addFiles(['lib/implementation.js', 'lib/instance.js'], 'server');
 }
 
 Package.onUse(function(api) {
   configurePackage(api);
-  api.mainModule('lib/instance.js', 'server');
+  api.export(['Picker']);
 });
 
 Package.onTest(function(api) {
   configurePackage(api);
-  api.use('communitypackages:picker', 'server');
   api.use(['tinytest', 'http', 'random'], 'server');
-  api.mainModule('test/instance.js', 'server');
+  api.addFiles('test/instance.js', 'server');
 });
