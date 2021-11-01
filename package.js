@@ -12,7 +12,7 @@ Npm.depends({
 
 function configurePackage(api) {
   api.versionsFrom('2.3');
-  api.use(['webapp', 'ecmascript', 'url'], 'server');
+  api.use(['webapp@1.10.1', 'ecmascript', 'url'], 'server');
   api.addFiles(['lib/implementation.js', 'lib/instance.js'], 'server');
 }
 
