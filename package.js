@@ -1,17 +1,17 @@
 Package.describe({
-  name: 'communitypackages:picker',
+  name: 'fchandonnet:picker',
   summary: 'Server Side Router for Meteor',
-  version: '1.1.0',
-  git: 'https://github.com/Meteor-Community-Packages/picker.git',
+  version: '1.1.1',
+  git: 'https://github.com/chandonnet/picker',
   documentation: 'README.md'
 });
 
 Npm.depends({
-  'path-to-regexp': '6.1.0'
+  'path-to-regexp': '6.2.0'
 });
 
 function configurePackage(api) {
-  api.versionsFrom('1.9');
+  api.versionsFrom('2.3');
   api.use(['webapp', 'ecmascript', 'url'], 'server');
 }
 
