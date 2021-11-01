@@ -17,7 +17,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   configurePackage(api);
-  api.use(['tinytest', 'http', 'random'], ['server']);
+  api.use(['tinytest@1.1.0', 'http', 'random'], ['server']);
   api.addFiles([
     'test/instance.js'
   ], ['server']);
@@ -26,7 +26,7 @@ Package.onTest(function(api) {
 function configurePackage(api) {
   api.versionsFrom('2.3');
 
-  api.use(['webapp', 'ecmascript', 'url'], ['server']);
+  api.use(['webapp@1.10.1', 'ecmascript', 'url'], ['server']);
   api.addFiles([
     'lib/implementation.js',
     'lib/instance.js',
