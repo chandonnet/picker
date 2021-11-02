@@ -19,10 +19,3 @@ Package.onUse(function(api) {
   configurePackage(api);
   api.mainModule('lib/instance.js', 'server');
 });
-
-Package.onTest(function(api) {
-  configurePackage(api);
-  api.use('fchandonnet:picker', 'server');
-  api.use(['tinytest', 'http', 'random'], 'server');
-  api.mainModule('test/instance.js', 'server');
-});
